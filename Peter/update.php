@@ -1,15 +1,17 @@
 <?php
 require_once 'actions/db_connect.php';
 
-if ($_GET['id']) {
-    $id = $_GET['id'];
-    $sql = "SELECT * FROM products WHERE id = {$id}";
+if ($_GET['dish_id']) {
+    $id = $_GET['dish_id'];
+    $sql = "SELECT * FROM dishes WHERE dishID = $id";
     $result = mysqli_query($connect, $sql);
     if (mysqli_num_rows($result) == 1) {
         $data = mysqli_fetch_assoc($result);
         $name = $data['name'];
         $price = $data['price'];
-        $picture = $data['picture'];
+        $image = $data['image'];
+        $description = $data['description'];
+        $ingredienties = $data['ingredienties'];
     } else {
         header("location: error.php");
     }
@@ -26,8 +28,7 @@ if ($_GET['id']) {
         <?php require_once 'components/boot.php'?>
         <style type= "text/css">
             fieldset {
-                margin: auto;
-                margin-top: 100px;
+                margin: 100px auto auto;
                 width: 60% ;
             }  
             .img-thumbnail{
@@ -38,7 +39,7 @@ if ($_GET['id']) {
     </head>
     <body>
         <fieldset>
-            <legend class='h2'>Update request <img class='img-thumbnail rounded-circle' src='pictures/<?php echo $picture ?>' alt="<?php echo $name ?>"></legend>
+            <legend class='h2'>Update request <img class='img-thumbnail rounded-circle' src='pictures/<?php echo $image ?>' alt="<?php echo $name ?>"></legend>
             <form action="actions/a_update.php"  method="post" enctype="multipart/form-data">
                 <table class="table">
                     <tr>
@@ -50,12 +51,20 @@ if ($_GET['id']) {
                         <td><input class="form-control" type= "number" name="price" step="any"  placeholder="Price" value ="<?php echo $price ?>" /></td>
                     </tr>
                     <tr>
+                        <th>Description</th>
+                        <td><input class="form-control" type="text"  name="description" placeholder ="Product Name" value="<?php echo $description ?>"  /></td>
+                    </tr>
+                    <tr>
+                        <th>Ingredienties</th>
+                        <td><input class="form-control" type="text"  name="ingredienties" placeholder ="Product Name" value="<?php echo $ingredienties ?>"  /></td>
+                    </tr>
+                    <tr>
                         <th>Picture</th>
                         <td><input class="form-control" type="file" name= "picture" /></td>
                     </tr>
                     <tr>
-                        <input type= "hidden" name= "id" value= "<?php echo $data['id'] ?>" />
-                        <input type= "hidden" name= "picture" value= "<?php echo $data['picture'] ?>" />
+                        <input type= "hidden" name= "dish_id" value= "<?php echo $id ?>" />
+                        <input type= "hidden" name= "image" value= "<?php echo $data['image'] ?>" />
                         <td><button class="btn btn-success" type= "submit">Save Changes</button></td>
                         <td><a href= "index.php"><button class="btn btn-warning" type="button">Back</button></a></td>
                     </tr>
