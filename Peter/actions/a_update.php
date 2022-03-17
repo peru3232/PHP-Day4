@@ -5,26 +5,27 @@ require_once 'file_upload.php';
 if ($_POST) {    
     $name = $_POST['name'];
     $price = $_POST['price'];
-    $id = $_POST['id'];
+    $description = $_POST['description'];
+    $ingredienties = $_POST['ingredienties'];
+    $id = $_POST['dish_id'];
     //variable for upload pictures errors is initialised
     $uploadError = '';
 
-    $picture = file_upload($_FILES['picture']);//file_upload() called  
+    $picture = file_upload($_FILES['picture']);//file_upload() called
     if($picture->error===0){
-        ($_POST["picture"]=="product.png")?: unlink("../pictures/$_POST[picture]");           
-        $sql = "UPDATE products SET name = '$name', price = $price, picture = '$picture->fileName' WHERE id = {$id}";
+        $_POST["image"] == "product.png" || unlink("../pictures/$_POST[image]");
+        $sql = "UPDATE dishes SET name = '$name', price = $price, image = '$picture->fileName', description = '$description', ingredienties = '$ingredienties' WHERE dishID = $id";
     }else{
-        $sql = "UPDATE products SET name = '$name', price = $price WHERE id = {$id}";
+        $sql = "UPDATE dishes SET name = '$name', price = $price, description = '$description', ingredienties = '$ingredienties' WHERE dishID = $id";
     }    
     if (mysqli_query($connect, $sql) === TRUE) {
         $class = "success";
         $message = "The record was successfully updated";
-        $uploadError = ($picture->error !=0)? $picture->ErrorMessage :'';
     } else {
         $class = "danger";
         $message = "Error while updating record : <br>" . mysqli_connect_error();
-        $uploadError = ($picture->error !=0)? $picture->ErrorMessage :'';
     }
+    $uploadError = ($picture->error !=0)? $picture->ErrorMessage :'';
     mysqli_close($connect);    
 } else {
     header("location: ../error.php");

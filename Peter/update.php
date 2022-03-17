@@ -64,7 +64,7 @@ if ($_GET['dish_id']) {
                     </tr>
                     <tr>
                         <input type= "hidden" name= "dish_id" value= "<?php echo $id ?>" />
-                        <input type= "hidden" name= "image" value= "<?php echo $data['image'] ?>" />
+                        <input type= "text" name= "image" value= "<?php echo $image ?>" />
                         <td><button class="btn btn-success" type= "submit">Save Changes</button></td>
                         <td><a href= "index.php"><button class="btn btn-warning" type="button">Back</button></a></td>
                     </tr>
