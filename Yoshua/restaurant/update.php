@@ -9,6 +9,7 @@ if ($_GET['id']) {
         $data = mysqli_fetch_assoc($result);
         $name = $data['name'];
         $price = $data['price'];
+        $description = $data['description'];
         $picture = $data['image'];
     } else {
         header("location: error.php");
@@ -51,6 +52,10 @@ if ($_GET['id']) {
                     <tr>
                         <th>Price</th>
                         <td><input class="form-control" type= "number" name="price" step="any"  placeholder="Price" value ="<?php echo $price ?>" /></td>
+                    </tr>
+                    <tr>
+                        <th>Description</th>
+                        <td><input class="form-control" type= "text" name="description"  placeholder="Description" value ="<?php echo $description ?>" /></td>
                     </tr>
                     <tr>
                         <th>Picture</th>

@@ -5,11 +5,12 @@ require_once 'file_upload.php';
 if ($_POST) {   
     $name = $_POST['name'];
     $price = $_POST['price'];
+    $description = $_POST['description'];
     $uploadError = '';
     //this function exists in the service file upload.
     $picture = file_upload($_FILES['picture']);  // this function is stored in file_upload.php
    
-    $sql = "INSERT INTO dishes(name, price, image) VALUES ('$name', $price,'$picture->fileName')";
+    $sql = "INSERT INTO dishes(name, price, description, image) VALUES ('$name', $price, '$description','$picture->fileName')";
 
     if (mysqli_query($connect, $sql) === true) {
         $class = "success";
@@ -17,6 +18,7 @@ if ($_POST) {
             <table class='table w-50'><tr>
             <td> $name </td>
             <td> $price </td>
+            <td> $description </td>
             </tr></table><hr>";
         $uploadError = ($picture->error !=0)? $picture->ErrorMessage :'';
     } else {

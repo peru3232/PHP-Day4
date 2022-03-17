@@ -26,12 +26,17 @@
                    </tr>   
                    <tr>
                        <th>Price</th>
-                       <td><input class='form-control' type="number" name= "price" placeholder="Price" step="any" /></td>
+                       <td><input class='form-control' type="number" name= "price" placeholder="12" step="any" /></td>
                    </tr>
+                   <tr>
+                        <th>Description</th>
+                        <td><input class="form-control" type= "text" name= "description"  placeholder="Homemade pasta and sauce" /></td>
+                    </tr>
                    <tr>
                        <th>Picture</th>
                        <td><input class='form-control' type="file" name="picture" /></td>
                    </tr>
+                   
                    <tr>
                        <td><button class='btn btn-success' type="submit">Add dish</button></td>
                        <td><a href="index.php"><button class='btn btn-primary' type="button">Home</button></a></td>

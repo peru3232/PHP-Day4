@@ -17,7 +17,7 @@ function file_upload($picture) {
     } else {
         if (in_array($fileExtension, $filesAllowed)) {
             if ($fileError === 0) {
-                if ($fileSize < 500000) { //500kb this number is in bytes
+                if ($fileSize < 600000) { //600kb this number is in bytes
                     //it gives a file name based microseconds
                     $fileNewName = uniqid('') . "." . $fileExtension; // 1233343434.jpg i.e
                     $destination = "../pictures/$fileNewName";
@@ -30,7 +30,7 @@ function file_upload($picture) {
                         return $result;
                     }
                 } else {                                      
-                    $result->ErrorMessage = "This picture is bigger than the allowed 500Kb. <br> Please choose a smaller one and update the product.";
+                    $result->ErrorMessage = "This picture is bigger than the allowed 600Kb. <br> Please choose a smaller one and update the product.";
                     return $result;
                 }
             } else {                              

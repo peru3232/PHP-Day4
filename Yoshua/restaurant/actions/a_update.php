@@ -3,18 +3,19 @@ require_once 'db_connect.php';
 require_once 'file_upload.php';
 
 if ($_POST) {    
-    $name = $_POST['name'];
+    $name = $_POST['name']; // attribute "name" from update.php form
     $price = $_POST['price'];
+    $description = $_POST['description'];
     $id = $_POST['id'];
     //variable for upload pictures errors is initialised
     $uploadError = '';
 
     $picture = file_upload($_FILES['picture']);//file_upload() called  
     if($picture->error===0){
-        // ($_POST["image"]=="dish.png")?: unlink("../pictures/$_POST[image]");           
-        $sql = "UPDATE dishes SET name = '$name', price = $price, image = '$picture->fileName' WHERE dish_id = {$id}";
+        ($_POST["picture"]=="dish.png")?: unlink("../pictures/$_POST[image]");           
+        $sql = "UPDATE dishes SET name = '$name', price = $price, description = '$description', image = '$picture->fileName' WHERE dish_id = {$id}";
     }else{
-        $sql = "UPDATE dishes SET name = '$name', price = $price WHERE dish_id = {$id}";
+        $sql = "UPDATE dishes SET name = '$name', price = $price, description = '$description' WHERE dish_id = {$id}";
     } 
     if (mysqli_query($connect, $sql) === TRUE) {
         $class = "success";
