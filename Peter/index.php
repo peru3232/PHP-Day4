@@ -1,13 +1,13 @@
 <?php
-//connect to the database
+//connect to database
 require_once 'actions/db_connect.php';
 
 $sql = 'SELECT * FROM dishes';
 $result = mysqli_query($connect ,$sql);
-$tbody ='';
+$output ='';
 
 while($row = mysqli_fetch_array($result, MYSQLI_ASSOC)) {
-    $tbody .="
+    $output .="
         <div class='card col-lg-3 col-md-5 col-sm-10 col-11 p-0 m-2'>
             <div class='img-task' style='background-image: url(".$row['image'].")'></div>
             <div class='card-body pb-2'>
@@ -21,7 +21,7 @@ while($row = mysqli_fetch_array($result, MYSQLI_ASSOC)) {
             <hr>
             <div class='card-body py-2'>
                 <a href='details.php?dish_id=" .$row['dishID']."'><button class='btn btn-primary me-3'>Details</button></a> 
-                    <button class='btn btn-success' (click)='addToCart(dishId)'>Order</button>
+                    <button class='btn btn-success'>Order</button>
             </div>
         </div>
     ";
@@ -46,11 +46,9 @@ mysqli_close($connect);
     <h1 class='py-3 text-center bg-danger bg-opacity-50 display-2'>Our dishes are:</h1>
     <!-- Card Container -->
     <div class='row justify-content-center'>
-        <div class="img-task" style="background-image: url(pics/diavola.jpg)"> </div>
+        <div class="img-task" style="background-image: url(pics/main.jpg)"> </div>
         <div class='row justify-content-center pt-5 content-container'>
-            <tbody>
-                <?= $tbody;?>
-            </tbody>
+            <?= $output ?>
         </div>
     </div>
 
