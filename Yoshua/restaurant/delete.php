@@ -3,13 +3,14 @@ require_once 'actions/db_connect.php';
 
 if ($_GET['id']) {
     $id = $_GET['id'];
-    $sql = "SELECT * FROM products WHERE id = {$id}" ;
+    $sql = "SELECT * FROM dishes WHERE dish_id = {$id}" ;
     $result = mysqli_query($connect, $sql);
     $data = mysqli_fetch_assoc($result);
     if (mysqli_num_rows($result) == 1) {
         $name = $data['name'];
         $price = $data['price'];
-        $picture = $data['picture'];
+        $description = $data['description'];
+        $picture = $data['image'];
     } else {
         header("location: error.php");
     }
@@ -45,7 +46,16 @@ if ($_GET['id']) {
             <h5>You have selected the data below:</h5>
             <table class="table w-75 mt-3">
                 <tr>
+                <th>Dish Name</th>
                     <td><?php echo $name?></td>
+                </tr>
+                <tr>
+                <th>Price</th>
+                    <td><?php echo $price?></td>
+                </tr>
+                <tr>
+                <th>Description</th>
+                    <td><?php echo $description?></td>
                 </tr>
             </table>
 
@@ -54,7 +64,7 @@ if ($_GET['id']) {
                 <input type="hidden" name="id" value="<?php echo $id ?>" />
                 <input type="hidden" name="picture" value="<?php echo $picture ?>" />
                 <button class="btn btn-danger" type="submit">Yes, delete it!</button>
-                <a href="index.php"><button class="btn btn-warning" type="button">No, go back!</button></a>
+                <a href="index.php"><button class="btn btn-success" type="button">No, go back!</button></a>
             </form>
         </fieldset>
     </body>

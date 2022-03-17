@@ -12,7 +12,7 @@ if ($_POST) {
 
     $picture = file_upload($_FILES['picture']);//file_upload() called  
     if($picture->error===0){
-        ($_POST["picture"]=="dish.png")?: unlink("../pictures/$_POST[image]");           
+        ($_POST["picture"]=="dish.png")?: unlink("../pictures/$_POST[picture]"); // unlink deletes old picture, also refers to the "name" attribute       
         $sql = "UPDATE dishes SET name = '$name', price = $price, description = '$description', image = '$picture->fileName' WHERE dish_id = {$id}";
     }else{
         $sql = "UPDATE dishes SET name = '$name', price = $price, description = '$description' WHERE dish_id = {$id}";
