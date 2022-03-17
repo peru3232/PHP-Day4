@@ -4,9 +4,9 @@ require_once 'db_connect.php';
 if ($_POST) {
     $id = $_POST['id'];
     $picture = $_POST['picture'];
-    ($picture =="product.png")?: unlink("../pictures/$picture");
+    ($picture =="dishes.png")?: unlink("../pictures/$picture");
 
-    $sql = "DELETE FROM products WHERE id = {$id}";
+    $sql = "DELETE FROM dishes WHERE dish_id = {$id}";
     if (mysqli_query($connect, $sql) === TRUE) {
         $class = "success";
         $message = "Successfully Deleted!";

@@ -12,8 +12,9 @@ if(mysqli_num_rows($result)>0){ // if there is a record from table
             <td>".$row['name']."</td>
             <td>".$row['description']."</td>            
             <td>".$row['price']."</td>
-            <td><a href='update.php?id=".$row['dish_id']."'><button class='btn btn-primary'>Edit</button></a></td>
-        </tr>";
+            <td><a href='update.php?id=" .$row['dish_id']."'><button class='btn btn-primary btn-sm' type='button'>Update</button></a>
+            <a href='delete.php?id=" .$row['dish_id']."'><button class='btn btn-danger btn-sm' type='button'>Delete</button></a></td>
+            </tr>";
     }
     }else{
         $tbody="<tr><td colspan='4' class='text-center'>No Data Available</td></tr>";
