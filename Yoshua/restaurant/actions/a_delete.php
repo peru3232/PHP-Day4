@@ -31,13 +31,13 @@ if ($_POST) {
         <?php require_once '../components/boot.php'?>  
     </head>
     <body>
-        <div class="container">
+        <div class="container-fluid bg-light mx-auto">
             <div class="mt-3 mb-3">
                 <h1>Delete request response</h1>
             </div>
             <div class="alert alert-<?=$class;?>" role="alert">
                 <p><?=$message;?></p>
-                <a href='../index.php'><button class="btn btn-success" type='button'>Home</button></a>
+                <a href='../index.php'><button class="btn btn-success" type='button'>Back</button></a>
             </div>
         </div>
     </body>

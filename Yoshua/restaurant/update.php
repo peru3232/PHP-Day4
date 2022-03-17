@@ -29,20 +29,19 @@ if ($_GET['id']) {
         <title>Edit Dish</title>
         <?php require_once 'components/boot.php'?>
         <style type= "text/css">
-            fieldset {
-                margin: auto;
-                margin-top: 100px;
-                width: 60% ;
-            }  
+
             .img-thumbnail{
                 width: 70px !important;
                 height: 70px !important;
+                object-fit: cover;
             }     
         </style>
     </head>
     <body>
-        <fieldset>
-            <legend class='h2 bg-dark text-light text-center p-1'>Update request <img class='img-thumbnail rounded-circle' src='pictures/<?php echo $picture ?>' alt="<?php echo $name ?>"></legend>
+    <div class="container-fluid bg-light mx-auto">
+        <fieldset class="w-75 mt-3 mx-auto">
+            
+            <legend class='h2 bg-dark text-light text-center p-1  mt-3 '>Update request <img class='img-thumbnail rounded-circle' src='pictures/<?php echo $picture ?>' alt="<?php echo $name ?>"></legend>
             <form action="actions/a_update.php"  method="post" enctype="multipart/form-data">
                 <table class="table">
                     <tr>
@@ -70,5 +69,6 @@ if ($_GET['id']) {
                 </table>
             </form>
         </fieldset>
+        </div>
     </body>
 </html>

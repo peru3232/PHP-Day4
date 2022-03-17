@@ -43,15 +43,14 @@ if ($_POST) {
         <?php require_once '../components/boot.php'?> 
     </head>
     <body>
-        <div class="container">
+        <div class="container-fluid bg-light mx-auto">
             <div class="mt-3 mb-3">
                 <h1>Update request response</h1>
             </div>
             <div class="alert alert-<?php echo $class;?>" role="alert">
                 <p><?php echo ($message) ?? ''; ?></p>
                 <p><?php echo ($uploadError) ?? ''; ?></p>
-                <a href='../update.php?id=<?=$id;?>'><button class="btn btn-primary" type='button'>Back</button></a>
-                <a href='../index.php'><button class="btn btn-success" type='button'>Home</button></a>
+                <a href='../index.php'><button class="btn btn-success" type='button'>Back</button></a>
             </div>
         </div>
     </body>

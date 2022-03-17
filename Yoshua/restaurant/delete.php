@@ -29,21 +29,20 @@ if ($_GET['id']) {
         <title>Delete Product</title>
         <?php require_once 'components/boot.php'?>
         <style type= "text/css">
-            fieldset {
-                margin: auto;
-                margin-top: 100px;
-                width: 70% ;
-            }     
+
             .img-thumbnail{
                 width: 70px !important;
                 height: 70px !important;
+                object-fit: cover;
             }    
         </style>
     </head>
     <body>
-        <fieldset>
-            <legend class='h2 bg-dark text-light text-center p-1'>Delete request <img class='img-thumbnail rounded-circle' src='pictures/<?php echo $picture ?>' alt="<?php echo $name ?>"></legend>
-            <h5>You have selected the data below:</h5>
+    <div class="container-fluid bg-light mx-auto">
+        <fieldset class="w-75 mt-3 mx-auto">
+
+            <legend class='h2 bg-dark text-light text-center p-1  mt-3 '>Delete request <img class='img-thumbnail rounded-circle' src='pictures/<?php echo $picture ?>' alt="<?php echo $name ?>"></legend>
+            <h5>You have selected the following menu item:</h5>
             <table class="table w-75 mt-3">
                 <tr>
                 <th>Dish Name</th>
@@ -68,5 +67,6 @@ if ($_GET['id']) {
                 
             </form>
         </fieldset>
+        </div>
     </body>
 </html>

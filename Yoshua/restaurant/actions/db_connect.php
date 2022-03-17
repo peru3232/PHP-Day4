@@ -8,11 +8,11 @@ $dbname = "restaurant"; // here we need to write the Database name
 // create connection, you need to be aware of the order of the parameters
 $connect = mysqli_connect($localhost, $username, $password, $dbname);
 
-// check connection
-if(!$connect) {
-   die("Connection failed: ".mysqli_connect_error());
-}else {
-    echo "Successfully Connected";
-}
+// // check connection
+// if(!$connect) {
+//    die("Connection failed: ".mysqli_connect_error());
+// }else {
+//     echo "Successfully Connected";
+// }
 
 ?>

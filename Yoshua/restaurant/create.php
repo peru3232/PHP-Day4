@@ -7,17 +7,14 @@
        
        <title>Add Dish</title>
        <?php require_once 'components/boot.php'?>
-       <style>
-           fieldset {
-               margin: auto;
-               margin-top: 100px;
-               width: 60% ;
-           }      
-       </style>
+
    </head>
    <body>
-       <fieldset>
-           <legend class='h2 bg-dark text-light text-center'>Add Dish</legend>
+   <div class="container-fluid bg-light mx-auto">
+       <fieldset class="w-75 mt-3 mx-auto">
+
+           <legend class='h2 bg-dark text-light text-center p-3  mt-3 '>Add Dish</legend>
+           
            <form action="actions/a_create.php" method= "post" enctype="multipart/form-data">
                <table class='table table-hover'>
                    <tr>
@@ -44,5 +41,6 @@
                </table>
            </form>
        </fieldset>
+        </div>
    </body>
 </html>

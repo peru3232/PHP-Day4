@@ -33,11 +33,13 @@ if(mysqli_num_rows($result)>0){ // if there is a record from table
 
 </head>
 <body>
+    <div class="container-fluid bg-light mx-auto">
     <div class="w-75 mt-3 mx-auto">
+
+<p class='h2 bg-dark text-light text-center p-3'>Menu</p>
 <div class="mb-3">
 <a href="create.php"><button class='btn btn-primary' type="button">Add dish</button></a>
 </div>
-<p class='h2 bg-dark text-light text-center p-3'>Menu</p>
 <table class='table table-hover'>
 <thead class='table'>
 <tr>
@@ -56,7 +58,7 @@ if(mysqli_num_rows($result)>0){ // if there is a record from table
 </table>
 
 
-
+</div> 
 
     </div>  
 </body>
