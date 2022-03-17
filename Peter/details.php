@@ -4,10 +4,10 @@ require_once 'actions/db_connect.php';
 
 $sql = "SELECT * FROM dishes where dishID = $_GET[dish_id]";
 $result = mysqli_query($connect ,$sql);
-$tbody='';
+$output='';
 
 $row = mysqli_fetch_array($result, MYSQLI_ASSOC);
-$tbody .=  "
+$output .=  "
 <h1 class='pt-3 text-center bg-danger bg-opacity-50 display-2'>Details</h1>
 <!-- Content Container -->
 <div class='row justify-content-center pt-5'>
@@ -23,8 +23,8 @@ $tbody .=  "
             <p class='border-2 border-top border-bottom py-2 mb-0'>€".number_format($row['price'], 2, ',', ' ')."</p>
         </div>
         <div class='py-2 text-center'>
-          <button class='btn btn-primary mx-2' routerLink='/menu'>Back</button>
-          <button class='btn btn-success mx-2' (click)='addToCart()'>Order</button>
+            <a href='index.php'><button class='btn btn-primary mx-2'>Back</button></a>
+            <button class='btn btn-success mx-2'>Order</button>
         </div>
       </div>
   </div>
@@ -45,8 +45,6 @@ mysqli_close($connect);
 
 </head>
 <body>
-<tbody>
-<?= $tbody;?>
-</tbody>
+<?= $output ?>
 </body>
 </html>

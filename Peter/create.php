@@ -7,15 +7,14 @@
         <title>PHP CRUD  |  Add Product</title>
         <style>
             fieldset {
-                margin: auto;
-                margin-top: 100px;
+                margin: 100px auto auto;
                 width: 60% ;
             }       
         </style>
     </head>
     <body>
         <fieldset>
-            <legend class='h2'>Add Product</legend>
+            <legend class='h2'>Adding Dishes</legend>
             <form action="actions/a_create.php" method= "post" enctype="multipart/form-data">
                 <table class='table'>
                     <tr>
@@ -27,12 +26,20 @@
                         <td><input class='form-control' type="number" name= "price" placeholder="Price" step="any" /></td>
                     </tr>
                     <tr>
-                        <th>Picture</th>
-                        <td><input class='form-control' type="file" name="picture" /></td>
+                        <th>Details</th>
+                        <td><input class='form-control' type="text" name= "description" placeholder="Details" /></td>
                     </tr>
                     <tr>
-                        <td><button class='btn btn-success' type="submit">Insert Product</button></td>
-                        <td><a href="index.php"><button class='btn btn-warning' type="button">Home</button></a></td>
+                        <th>Ingredients</th>
+                        <td><input class='form-control' type="text" name= "ingredienties" placeholder="Some ingredients" /></td>
+                    </tr>
+                    <tr>
+                        <th>Picture</th>
+                        <td><input class='form-control' type="file" name="image" /></td>
+                    </tr>
+                    <tr>
+                        <td><button class='btn btn-success' type="submit">Insert this Dish</button></td>
+                        <td><a href="index.php"><button class='btn btn-secondary' type="button">Back</button></a></td>
                     </tr>
                 </table>
             </form>
