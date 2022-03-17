@@ -38,8 +38,8 @@
                    </tr>
                    
                    <tr>
-                       <td><button class='btn btn-success' type="submit">Add dish</button></td>
-                       <td><a href="index.php"><button class='btn btn-primary' type="button">Home</button></a></td>
+                     <td><a href="index.php"><button class='btn btn-success' type="button">Back</button></a></td>
+                     <td><button class='btn btn-primary' type="submit">Add dish</button></td>
                    </tr>
                </table>
            </form>

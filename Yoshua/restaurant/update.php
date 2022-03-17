@@ -42,7 +42,7 @@ if ($_GET['id']) {
     </head>
     <body>
         <fieldset>
-            <legend class='h2'>Update request <img class='img-thumbnail rounded-circle' src='pictures/<?php echo $picture ?>' alt="<?php echo $name ?>"></legend>
+            <legend class='h2 bg-dark text-light text-center p-1'>Update request <img class='img-thumbnail rounded-circle' src='pictures/<?php echo $picture ?>' alt="<?php echo $name ?>"></legend>
             <form action="actions/a_update.php"  method="post" enctype="multipart/form-data">
                 <table class="table">
                     <tr>
@@ -64,8 +64,8 @@ if ($_GET['id']) {
                     <tr>
                         <input type= "hidden" name= "id" value= "<?php echo $data['dish_id'] ?>" />
                         <input type= "hidden" name= "picture" value= "<?php echo $data['image'] ?>" />
-                        <td><button class="btn btn-success" type= "submit">Save Changes</button></td>
-                        <td><a href= "index.php"><button class="btn btn-primary" type="button">Back</button></a></td>
+                        <td><a href= "index.php"><button class="btn btn-success" type="button">Back</button></a></td>
+                        <td><button class="btn btn-primary" type= "submit">Save Changes</button></td>
                     </tr>
                 </table>
             </form>
