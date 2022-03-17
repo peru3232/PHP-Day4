@@ -26,12 +26,13 @@
                         <td><input class='form-control' type="number" name= "price" placeholder="Price" step="any" /></td>
                     </tr>
                     <tr>
-                        <th>Details</th>
-                        <td><input class='form-control' type="text" name= "description" placeholder="Details" /></td>
+                    <tr>
+                        <th>Description</th>
+                        <td><textarea  class="form-control"  name="description" rows="5" placeholder="some description"></textarea></td>
                     </tr>
                     <tr>
-                        <th>Ingredients</th>
-                        <td><input class='form-control' type="text" name= "ingredienties" placeholder="Some ingredients" /></td>
+                        <th>Ingredienties</th>
+                        <td><textarea  class="form-control"  name="ingredienties" rows="3"  placeholder="some description"></textarea></td>
                     </tr>
                     <tr>
                         <th>Picture</th>

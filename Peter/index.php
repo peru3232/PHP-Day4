@@ -12,7 +12,7 @@ while($row = mysqli_fetch_array($result, MYSQLI_ASSOC)) {
             <div class='img-task' style='background-image: url(pictures/".$row['image'].")'></div>
             <div class='card-body pb-2'>
                 <h5 class='card-title'>".$row['name']."</h5>
-                <p class='card-text'>".$row['ingredienties']."</p>
+                <p class='card-text'>Ingredients: ".$row['ingredienties']."</p>
             </div>
             <hr>
             <div class='card-body py-2'>

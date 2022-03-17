@@ -48,15 +48,15 @@ if ($_GET['dish_id']) {
                     </tr>
                     <tr>
                         <th>Price</th>
-                        <td><input class="form-control" type= "number" name="price" step="any"  placeholder="Price" value ="<?php echo $price ?>" /></td>
+                        <td><input class="form-control" type= "number" name="price" step="any" placeholder="Price" value ="<?php echo $price ?>" /></td>
                     </tr>
                     <tr>
                         <th>Description</th>
-                        <td><input class="form-control" type="text"  name="description" placeholder ="Product Name" value="<?php echo $description ?>"  /></td>
+                        <td><textarea  class="form-control"  name="description" rows="5" ><?php echo $description ?></textarea></td>
                     </tr>
                     <tr>
                         <th>Ingredienties</th>
-                        <td><input class="form-control" type="text"  name="ingredienties" placeholder ="Product Name" value="<?php echo $ingredienties ?>"  /></td>
+                        <td><textarea  class="form-control"  name="ingredienties" rows="3" ><?php echo $ingredienties ?></textarea></td>
                     </tr>
                     <tr>
                         <th>Picture</th>
@@ -64,7 +64,7 @@ if ($_GET['dish_id']) {
                     </tr>
                     <tr>
                         <input type= "hidden" name= "dish_id" value= "<?php echo $id ?>" />
-                        <input type= "text" name= "image" value= "<?php echo $image ?>" />
+                        <input type= "hidden" name= "image" value= "<?php echo $image ?>" />
                         <td><button class="btn btn-success" type= "submit">Save Changes</button></td>
                         <td><a href= "index.php"><button class="btn btn-warning" type="button">Back</button></a></td>
                     </tr>

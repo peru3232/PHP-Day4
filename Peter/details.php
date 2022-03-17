@@ -12,12 +12,12 @@ $output .=  "
 <!-- Content Container -->
 <div class='row justify-content-center pt-5'>
   <div class='row justify-content-center content-container'>
-      <div class='card col-11 p-0 m-2'>
-        <div class='img-task' style='background-image: url(".$row['image'].")'></div>
+      <div class='card col-6 p-0 m-2'>
+        <div class='img-task' style='background-image: url(pictures/".$row['image'].")'></div>
         <div class='p-3'>
           <h5 class='card-title'>".$row['name']."</h5>
           <p class='card-text'>".$row['description']."</p>
-          <p class='card-text'>".$row['ingredienties']."</p>
+          <p class='card-text'>Ingredients: ".$row['ingredienties']."</p>
         </div>
         <div class='px-3'>
             <p class='border-2 border-top border-bottom py-2 mb-0'>€".number_format($row['price'], 2, ',', ' ')."</p>
