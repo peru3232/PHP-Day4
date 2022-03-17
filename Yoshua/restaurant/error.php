@@ -8,7 +8,8 @@
         <?php require_once 'components/boot.php'?>    
     </head>
     <body>
-        <div class="container-fluid bg-light mx-auto">  
+        <div class="container-fluid bg-light mx-auto
+        ">  
             <div class="w-75 mt-3 mb-3">
                 <h1>Invalid Request</h1>
             </div>

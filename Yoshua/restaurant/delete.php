@@ -26,7 +26,7 @@ if ($_GET['id']) {
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Delete Product</title>
+        <title>Delete Dish</title>
         <?php require_once 'components/boot.php'?>
         <style type= "text/css">
 
@@ -39,9 +39,10 @@ if ($_GET['id']) {
     </head>
     <body>
     <div class="container-fluid bg-light mx-auto">
+
         <fieldset class="w-75 mt-3 mx-auto">
 
-            <legend class='h2 bg-dark text-light text-center p-1  mt-3 '>Delete request <img class='img-thumbnail rounded-circle' src='pictures/<?php echo $picture ?>' alt="<?php echo $name ?>"></legend>
+            <legend class='h2 bg-dark text-light text-center p-3  mt-3 '>Delete request <img class='img-thumbnail rounded-circle' src='pictures/<?php echo $picture ?>' alt="<?php echo $name ?>"></legend>
             <h5>You have selected the following menu item:</h5>
             <table class="table w-75 mt-3">
                 <tr>

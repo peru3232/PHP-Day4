@@ -7,14 +7,23 @@
        
        <title>Add Dish</title>
        <?php require_once 'components/boot.php'?>
+       <style type= "text/css">
+
+.img-thumbnail{
+    width: 70px !important;
+    height: 70px !important;
+    object-fit: cover;
+}     
+</style>
 
    </head>
    <body>
    <div class="container-fluid bg-light mx-auto">
+
        <fieldset class="w-75 mt-3 mx-auto">
 
-           <legend class='h2 bg-dark text-light text-center p-3  mt-3 '>Add Dish</legend>
-           
+<legend class='h2 bg-dark text-light text-center p-3 mt-3'>Add dish <img class='img-thumbnail rounded-circle' src='pictures/menu.jpg'></legend>
+
            <form action="actions/a_create.php" method= "post" enctype="multipart/form-data">
                <table class='table table-hover'>
                    <tr>
