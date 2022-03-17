@@ -35,9 +35,9 @@ if(mysqli_num_rows($result)>0){ // if there is a record from table
 <body>
     <div class="w-75 mt-3 mx-auto">
 <div class="mb-3">
-<a href="create.php"><button class='btn btn-success' type="button">Add dish</button></a>
+<a href="create.php"><button class='btn btn-primary' type="button">Add dish</button></a>
 </div>
-<p class='h2 bg-dark text-light text-center'>Menu</p>
+<p class='h2 bg-dark text-light text-center p-3'>Menu</p>
 <table class='table table-hover'>
 <thead class='table'>
 <tr>

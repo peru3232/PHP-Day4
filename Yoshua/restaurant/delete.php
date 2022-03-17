@@ -42,7 +42,7 @@ if ($_GET['id']) {
     </head>
     <body>
         <fieldset>
-            <legend class='h2 mb-3'>Delete request <img class='img-thumbnail rounded-circle' src='pictures/<?php echo $picture ?>' alt="<?php echo $name ?>"></legend>
+            <legend class='h2 bg-dark text-light text-center p-1'>Delete request <img class='img-thumbnail rounded-circle' src='pictures/<?php echo $picture ?>' alt="<?php echo $name ?>"></legend>
             <h5>You have selected the data below:</h5>
             <table class="table w-75 mt-3">
                 <tr>
@@ -63,8 +63,9 @@ if ($_GET['id']) {
             <form action ="actions/a_delete.php" method="post">
                 <input type="hidden" name="id" value="<?php echo $id ?>" />
                 <input type="hidden" name="picture" value="<?php echo $picture ?>" />
-                <button class="btn btn-danger" type="submit">Yes, delete it!</button>
-                <a href="index.php"><button class="btn btn-success" type="button">No, go back!</button></a>
+                <a href="index.php"><button class="btn btn-success" type="button">Back</button></a>
+                <button class="btn btn-danger" type="submit">Delete</button>
+                
             </form>
         </fieldset>
     </body>
