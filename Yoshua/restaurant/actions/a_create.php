@@ -1,39 +1,43 @@
 <?php
-// require_once 'db_connect.php';
-// require_once 'file_upload.php';
+require_once 'db_connect.php';
+require_once 'file_upload.php';
 
-// if ($_POST) {   
-//     $name = $_POST['name'];
-//     $price = $_POST['price'];
-//     $uploadError = '';
-//     //this function exists in the service file upload.
-//     $picture = file_upload($_FILES['picture']);  
+if ($_POST) {   
+    $name = $_POST['name'];
+    $price = $_POST['price'];
+    $uploadError = '';
+    //this function exists in the service file upload.
+    $picture = file_upload($_FILES['picture']);  // this function is stored in file_upload.php
    
-//     $sql = "INSERT INTO products (name, price, picture) VALUES ('$name', $price,'$picture->fileName')";
+    $sql = "INSERT INTO dishes(name, price, image) VALUES ('$name', $price,'$picture->fileName')";
 
-//     if (mysqli_query($connect, $sql) === true) {
-//         $class = "success";
-//         $message = "The entry below was successfully created <br>
-//             <table class='table w-50'><tr>
-//             <td> $name </td>
-//             <td> $price </td>
-//             </tr></table><hr>";
-//         $uploadError = ($picture->error !=0)? $picture->ErrorMessage :'';
-//     } else {
-//         $class = "danger";
-//         $message = "Error while creating record. Try again: <br>" . $connect->error;
-//         $uploadError = ($picture->error !=0)? $picture->ErrorMessage :'';
-//     }
-//     mysqli_close($connect);
-// } else {
-//     header("location: ../error.php");
-// }
+    if (mysqli_query($connect, $sql) === true) {
+        $class = "success";
+        $message = "The dish below was successfully created! <br>
+            <table class='table w-50'><tr>
+            <td> $name </td>
+            <td> $price </td>
+            </tr></table><hr>";
+        $uploadError = ($picture->error !=0)? $picture->ErrorMessage :'';
+    } else {
+        $class = "danger";
+        $message = "Error while creating menu item. Please try again. <br>" . $connect->error;
+        $uploadError = ($picture->error !=0)? $picture->ErrorMessage :'';
+    }
+    mysqli_close($connect);
+
+} else {
+    header("location: ../error.php");
+}
 ?>
+
 
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Update</title>
         <?php require_once '../components/boot.php'?>
     </head>

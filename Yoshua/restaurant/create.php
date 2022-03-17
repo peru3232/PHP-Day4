@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
-   <head>
-       <meta charset="UTF-8">
-       <meta name="viewport" content="width=device-width, initial-scale=1.0">
-       <?php require_once 'components/boot.php'?>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+       
        <title>Add Dish</title>
+       <?php require_once 'components/boot.php'?>
        <style>
            fieldset {
                margin: auto;
@@ -19,8 +21,8 @@
            <form action="actions/a_create.php" method= "post" enctype="multipart/form-data">
                <table class='table table-hover'>
                    <tr>
-                       <th>Name</th>
-                       <td><input class='form-control' type="text" name="name"  placeholder="Dish Name" /></td>
+                       <th>Dish Name</th>
+                       <td><input class='form-control' type="text" name="name"  placeholder="Spaghetti" /></td>
                    </tr>   
                    <tr>
                        <th>Price</th>

@@ -8,7 +8,7 @@ $tbody="";
 if(mysqli_num_rows($result)>0){ // if there is a record from table
     while($row = mysqli_fetch_assoc($result)){
         $tbody .= "<tr>
-            <td><img class='img-thumbnail' style='height:150px' src='".$row['image']."'</td>
+            <td><img class='img-thumbnail' style='height:150px' src='pictures/".$row['image']."'</td>
             <td>".$row['name']."</td>
             <td>".$row['description']."</td>            
             <td>".$row['price']."</td>

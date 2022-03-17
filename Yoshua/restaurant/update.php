@@ -1,27 +1,30 @@
 <?php
-// require_once 'actions/db_connect.php';
+require_once 'actions/db_connect.php';
 
-// if ($_GET['id']) {
-//     $id = $_GET['id'];
-//     $sql = "SELECT * FROM products WHERE id = {$id}";
-//     $result = mysqli_query($connect, $sql);
-//     if (mysqli_num_rows($result) == 1) {
-//         $data = mysqli_fetch_assoc($result);
-//         $name = $data['name'];
-//         $price = $data['price'];
-//         $picture = $data['picture'];
-//     } else {
-//         header("location: error.php");
-//     }
-//     mysqli_close($connect);
-// } else {
-//     header("location: error.php");
-// }
+if ($_GET['id']) {
+    $id = $_GET['id'];
+    $sql = "SELECT * FROM dishes WHERE dish_id = {$id}";
+    $result = mysqli_query($connect, $sql);
+    if (mysqli_num_rows($result) == 1) {
+        $data = mysqli_fetch_assoc($result);
+        $name = $data['name'];
+        $price = $data['price'];
+        $picture = $data['image'];
+    } else {
+        header("location: error.php");
+    }
+    mysqli_close($connect);
+} else {
+    header("location: error.php");
+}
 ?>
 
 <!DOCTYPE html>
-<html>
-    <head>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Edit Dish</title>
         <?php require_once 'components/boot.php'?>
         <style type= "text/css">
@@ -54,8 +57,8 @@
                         <td><input class="form-control" type="file" name= "picture" /></td>
                     </tr>
                     <tr>
-                        <input type= "hidden" name= "id" value= "<?php echo $data['id'] ?>" />
-                        <input type= "hidden" name= "picture" value= "<?php echo $data['picture'] ?>" />
+                        <input type= "hidden" name= "id" value= "<?php echo $data['dish_id'] ?>" />
+                        <input type= "hidden" name= "picture" value= "<?php echo $data['image'] ?>" />
                         <td><button class="btn btn-success" type= "submit">Save Changes</button></td>
                         <td><a href= "index.php"><button class="btn btn-primary" type="button">Back</button></a></td>
                     </tr>
